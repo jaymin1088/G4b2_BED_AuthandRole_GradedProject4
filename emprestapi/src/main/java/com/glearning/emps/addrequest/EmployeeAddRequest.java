@@ -1,10 +1,13 @@
 package com.glearning.emps.addrequest;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class EmployeeAddRequest {
 	private long id;
+
 	private String firstname;
 	private String lastname;
 	private String email;
@@ -21,16 +24,16 @@ public class EmployeeAddRequest {
 		return firstname;
 	}
 
-	public void setFirstname(String firstName) {
-		this.firstname = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 	public String getLastname() {
 		return lastname;
 	}
 
-	public void setLastname(String lastName) {
-		this.lastname = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getEmail() {
