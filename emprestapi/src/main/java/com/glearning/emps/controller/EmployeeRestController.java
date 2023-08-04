@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -110,8 +111,9 @@ public class EmployeeRestController {
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public void deleteEmployeeById(@PathVariable("id") long id) {
-		this.employeeService.deleteById(id);
+	public ResponseEntity<String> deleteEmployeeById(@PathVariable("id") long id) {
+		employeeService.deleteById(id);
+		return ResponseEntity.ok("Deleted employee id - " + id);
 	}
 
 }
